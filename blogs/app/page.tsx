@@ -1,5 +1,11 @@
+import Categories from "./Categories";
+
 const Home = () => {
-  return <p>HOME</p>;
+  return (
+    <>
+      <Categories />
+    </>
+  );
 };
 
 export default Home;

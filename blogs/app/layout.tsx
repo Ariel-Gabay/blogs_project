@@ -7,7 +7,7 @@ interface Props {
 
 const Home = ({ children }: Props) => {
   return (
-    <html>
+    <html dir="rtl">
       <body>{children}</body>
     </html>
   );

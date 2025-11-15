@@ -13,6 +13,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "maxNodeModuleJsDepth": 100,
     "plugins": [
       {
         "name": "next"
@@ -28,7 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "setup_db.tst"
   ],
   "exclude": ["node_modules"]
 }
