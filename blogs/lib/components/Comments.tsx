@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Comments = ({ comments, parentId = null, depth = 0 }: Props) => {
-  const childComments = comments.filter((c) => c.parentId === parentId);
+  const childComments = comments.filter((c) => c.parent_id === parentId);
   if (childComments.length === 0) return null;
 
   return (
@@ -21,7 +21,7 @@ const Comments = ({ comments, parentId = null, depth = 0 }: Props) => {
             <div style={{ display: "flex" }}>
               <p>likes: {comment?.likes}</p>
             </div>
-            <p>{comment.createdAt}</p>
+            <p>{comment.created_at}</p>
           </div>
           <Comments
             comments={comments}
