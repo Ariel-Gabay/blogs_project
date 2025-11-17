@@ -2,19 +2,18 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase/clientServer";
 
 const Categories = async () => {
-  const { data: categories, error } = await supabase
-    .from("categories")
-    .select("*");
+  const { data, error } = await supabase.from("categories").select("*");
 
   if (error) return <div>שגיאה בטעינת הקטגוריות: {error.message}</div>;
-  if (!categories || categories.length === 0)
-    return <div>אין קטגוריות להצגה</div>;
+  if (!data || data.length === 0) return <div>אין קטגוריות להצגה</div>;
+
+  const categories = data as Category[];
 
   return (
     <div className="p-6">
       <h1 className="text-4xl font-bold mb-6 text-gray-900">קטגוריות</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {(categories as Category[]).map((cat) => (
+        {categories.map((cat) => (
           <Link
             key={cat.id}
             href={`/${cat.slug}`}
