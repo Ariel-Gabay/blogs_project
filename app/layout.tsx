@@ -1,14 +1,18 @@
 import { ReactNode } from "react";
+import Header from "./components/Header";
 import "./globals.css";
 
 interface Props {
   children: ReactNode;
 }
 
-const Home = ({ children }: Props) => {
+const Home = async ({ children }: Props) => {
   return (
-    <html dir="rtl">
-      <body>{children}</body>
+    <html dir="rtl" lang="en">
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 };
