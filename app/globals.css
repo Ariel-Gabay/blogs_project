@@ -114,14 +114,13 @@
   grid-template-columns: 100%;
   grid-template-rows: 1fr 50px;
   width: 100%;
-  aspect-ratio: 1.8 / 1;
+  aspect-ratio: 1.5 / 1;
   color: var(--blue);
   overflow: hidden;
   border-radius: 5px;
   background-color: var(--transparent-blue);
 
   &:hover {
-    /* border: 1.5px solid var(--red); */
     box-shadow: 0 0 10px 1px var(--blue);
     background-color: var(--transparent-blue);
     color: var(--red);
