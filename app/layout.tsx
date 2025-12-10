@@ -8,7 +8,7 @@ interface Props {
 
 const Home = async ({ children }: Props) => {
   return (
-    <html dir="rtl" lang="en">
+    <html dir="rtl" lang="he">
       <body>
         <Header />
         {children}

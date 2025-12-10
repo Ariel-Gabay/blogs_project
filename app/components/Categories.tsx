@@ -1,14 +1,10 @@
-import { supabase } from "@/lib/supabase/clientServer";
 import CategoryCard from "./CategoryCard";
-import Title from "./Title";
 
-const Categories = async () => {
-  const { data, error } = await supabase.from("categories").select("*");
+interface Props {
+  categories: Category[];
+}
 
-  if (error) return <div>שגיאה בטעינת הקטגוריות: {error.message}</div>;
-  if (!data || data.length === 0) return <div>אין קטגוריות להצגה</div>;
-
-  const categories = data as Category[];
+const Categories = async ({ categories }: Props) => {
   // const c1: Category = {
   //   id: "1",
   //   name: "name",
@@ -53,14 +49,11 @@ const Categories = async () => {
   // };
 
   return (
-    <nav className="p-6">
-      <Title string="עולמות תוכן" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {categories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
-        ))}
-      </div>
-    </nav>
+    <div className="w-full grid grid-cols-[repeat(auto-fill,_300px)] justify-center gap-2.5 py-20 categories-image bg-[length:70px]">
+      {categories.map((category) => (
+        <CategoryCard key={category.id} category={category} />
+      ))}
+    </div>
   );
 };
 

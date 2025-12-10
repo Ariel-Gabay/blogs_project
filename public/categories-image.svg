@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <pattern id="cat-bg" width="120" height="120" patternUnits="userSpaceOnUse">
+
+      <!-- רקע עדין -->
+      <rect width="120" height="120" fill="transparent" />
+
+      <!-- קווים אלכסוניים סימטריים ועדינים -->
+      <line x1="0" y1="0" x2="120" y2="120"
+            stroke="#8eb2b3"/>
+      <line x1="120" y1="0" x2="0" y2="120"
+            stroke="#8eb2b3" />
+
+      <!-- טבעת נקודתית מעוטרת -->
+      <circle cx="60" cy="60" r="15" fill="none" stroke="#8eb2b3" stroke-width="0.8" stroke-dasharray="3 6" />
+
+      <!-- נקודות דקורטיביות סימטריות -->
+      <circle cx="0" cy="0" r="2" fill="#8eb2b3" />
+      <circle cx="0" cy="120" r="2" fill="#8eb2b3" />
+      <circle cx="120" cy="0" r="2" fill="#8eb2b3" />
+      <circle cx="120" cy="120" r="2" fill840="#8eb2b3" />
+    </pattern>
+  </defs>
+
+  <rect width="120" height="120" fill="url(#cat-bg)" />
+</svg>

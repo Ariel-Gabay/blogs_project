@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { supabase } from "@/lib/supabase/clientServer";
+import { supabase } from "../../../lib/supabase/clientServer";
 
 interface Props {
   params: { category: string; post: string };
@@ -20,10 +20,23 @@ const Post = async ({ params }: Props) => {
   const post = data as Post;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+    <div
+      className="p-6 max-w-4xl mx-auto "
+      style={{ top: "150px", color: "var(--light)" }}
+    >
+      <h1
+        className="text-4xl font-bold mb-4"
+        style={{ fontSize: "var(--size-xxl)" }}
+      >
+        {post.title}
+      </h1>
       {post.sub_title && (
-        <h2 className="text-xl text-gray-600 mb-6">{post.sub_title}</h2>
+        <h2
+          className="text-xl text-gray-600 mb-6"
+          style={{ fontSize: "var(--size-xl)", color: "var(--light)" }}
+        >
+          {post.sub_title}
+        </h2>
       )}
       {post.cover_image && (
         <img
@@ -38,13 +51,21 @@ const Post = async ({ params }: Props) => {
           switch (block.type) {
             case "sectionTitle":
               return (
-                <h3 key={index} className="text-2xl font-semibold">
+                <h3
+                  key={index}
+                  className="text-2xl font-semibold"
+                  style={{ fontSize: "var(--size-lg)", color: "var(--light)" }}
+                >
                   {block.text}
                 </h3>
               );
             case "paragraph":
               return (
-                <p key={index} className="text-gray-700">
+                <p
+                  key={index}
+                  className="text-gray-700"
+                  style={{ fontSize: "var(--size-md)", color: "var(--light)" }}
+                >
                   {block.text}
                 </p>
               );
@@ -53,6 +74,7 @@ const Post = async ({ params }: Props) => {
                 <p
                   key={index}
                   className="text-gray-900 font-semibold bg-gray-100 p-4 rounded"
+                  style={{ fontSize: "var(--size-md)", color: "var(--light)" }}
                 >
                   {block.text}
                 </p>

@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase/clientServer";
+import { supabase } from "../../lib/supabase/clientServer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 

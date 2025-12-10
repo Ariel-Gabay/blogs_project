@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { CircleSlash } from "lucide-react";
 
 interface Props {
@@ -11,39 +10,43 @@ const CategoryCard = ({ category }: Props) => {
     <Link
       key={category.id}
       href={`/${category.slug}`}
-      className="category-card"
+      className="border border-[0.5px] border-[var(--cadetblue)] rounded-[5px]"
     >
-      <div>
-        <CircleSlash size={12} />
-      </div>
-      <div></div>
-      <div className="transform rotate-90">
-        <CircleSlash size={12} />
-      </div>
-      <div></div>
-      <div>
-        {category.image && (
-          <Image
-            src={category.image.src}
-            alt={category.image.alt}
-            width={2000}
-            height={1000}
-          />
-        )}
-      </div>
-      <div></div>
-      <div></div>
-      <div>
-        <h1>{category.name}</h1>
-        <h2>{category.description}</h2>
-      </div>
-      <div></div>
-      <div className="transform rotate-90">
-        <CircleSlash size={12} />
-      </div>
-      <div></div>
-      <div>
-        <CircleSlash size={12} />
+      <div className="h-[200px] bg-[var(--dark)] rounded-[5px] grid grid-cols-[30px_1fr_30px] grid-rows-[30px_3fr_4fr_30px] category-hover">
+        <div className="category-card-div">
+          <CircleSlash size={5} />
+        </div>
+        <div />
+        <div className="category-card-div transform rotate-90">
+          <CircleSlash size={5} />
+        </div>
+        <div />
+        <div className="category-card-div">
+          <h1
+            className="font-bold text-center"
+            style={{ fontSize: "var(--size-xl)", color: "var(--light)" }}
+          >
+            {category.name}
+          </h1>
+        </div>
+        <div />
+        <div />
+        <div className="category-card-div">
+          <h2
+            className="text-center"
+            style={{ fontSize: "var(--size-md)", color: "var(--light)" }}
+          >
+            {category.description}
+          </h2>
+        </div>
+        <div />
+        <div className="category-card-div transform rotate-90">
+          <CircleSlash size={5} />
+        </div>
+        <div />
+        <div className="category-card-div">
+          <CircleSlash size={5} />
+        </div>
       </div>
     </Link>
   );
