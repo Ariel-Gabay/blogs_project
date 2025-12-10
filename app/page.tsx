@@ -5,7 +5,7 @@ import { CircleSlash } from "lucide-react";
 import Posts from "./components/Posts";
 import { supabase } from "../lib/supabase/clientServer";
 import PostsPaginationCard from "./components/PostsPaginationCard";
-import styles from "@/app/styles/posts-pagination-card.module.css";
+// import styles from "@/app/styles/posts-pagination-card.module.css";
 
 const Home = async () => {
   const { data, error } = await supabase.from("categories").select("*");
