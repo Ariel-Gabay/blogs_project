@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "../../components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -27,9 +26,9 @@ const ThemeToggle = () => {
   };
 
   return (
-    <Button onClick={toggleTheme} style={{ zIndex: 51 }}>
+    <button onClick={toggleTheme} style={{ zIndex: 51 }} className="iconButton">
       {isDark ? <Sun /> : <Moon />}
-    </Button>
+    </button>
   );
 };
 

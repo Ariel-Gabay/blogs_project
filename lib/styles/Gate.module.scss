@@ -1,0 +1,129 @@
+@import "./shared.scss";
+
+.gate {
+  height: 100svh;
+  overflow: hidden;
+  background-image: url("/puzzle.svg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--red);
+}
+
+.contentArea {
+  background-color: var(--bg-transparent-color);
+  @include transition(background-color, box-shadow);
+  border: 1px double var(--red);
+  box-shadow: (var(--shadow-color));
+  border-radius: $size-sm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text-color);
+
+  & h1 {
+    @include static-box(1, $size-xxxl);
+    display: inline-block;
+    font-size: $size-xxxl;
+    font-weight: 700;
+    transform: translateX(0.1em);
+    text-align: center;
+    margin: 0;
+    color: var(--red);
+  }
+
+  & p {
+    margin: 0 2svw;
+    font-size: $size-lg;
+    text-align: center;
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: $size-xxs;
+  box-sizing: border-box;
+  margin: 5;
+  height: 95%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: $size-sm;
+  background-color: var(--bg-transparent-color);
+  border-right: 1px solid var(--red);
+  border-left: 1px solid var(--red);
+  @include transition(transform, background-color, box-shadow);
+
+  & svg {
+    color: var(--text-color);
+  }
+
+  & h2 {
+    @include static-box(1, $size-xxl);
+    @include text-overflow-3-points(1);
+    font-size: $size-xxl;
+    margin: 0;
+    font-weight: 600;
+    color: var(--red);
+  }
+
+  & h3 {
+    @include static-box(3, $size-lg);
+    @include text-overflow-3-points(3);
+    font-size: $size-lg;
+    text-align: center;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &:hover {
+    transform: translateY(1%);
+    box-shadow: (var(--shadow-color));
+    background-color: var(--bg-color);
+  }
+}
+
+@media (orientation: landscape) {
+  .contentArea {
+    width: 75svw;
+    height: 95svh;
+    & h1 {
+      letter-spacing: 0.2em;
+    }
+    & p {
+      @include static-box(2, $size-xl);
+    }
+  }
+  .cards {
+    height: calc($size-xxxl * 2.5);
+  }
+}
+
+@media (orientation: portrait) {
+  .contentArea {
+    width: 95svw;
+    height: 75svh;
+    & h1 {
+      letter-spacing: 0.1em;
+    }
+    & p {
+      @include static-box(3, $size-xl);
+    }
+  }
+  .cards {
+    height: calc($size-xxxl * 3.5);
+  }
+}

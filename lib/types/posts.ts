@@ -1,7 +1,7 @@
 type Category = {
   id: string;
-  name: string;
   slug: string;
+  name: string;
   description?: string;
   image?: { src: string; alt: string };
 };
@@ -11,8 +11,7 @@ type PostPreview = {
   category_id: string;
   slug: string;
   published: boolean;
-  created_at: string;
-  updated_at?: string;
+  updated_at: string;
   title: string;
   sub_title?: string;
   cover_image?: { src: string; alt: string };

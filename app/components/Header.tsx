@@ -1,12 +1,13 @@
 import { Home } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import styles from "@/lib/styles/Header.module.scss";
 
 const Header = () => {
   return (
-    <nav className="z-50 bg-white/50 fixed left-0 w-full h-[var(--header-hight)] p-[3px] flex items-center justify-around backdrop-blur-lg shadow-md">
-      <div></div>
-      <div>
-        <p className="blue">הַגֶּשֶׁר לִבְנֵי אָדָם</p>
+    <nav className={styles.header}>
+      <div className={styles.logo}>
+        <div className={styles.image} />
+        <p>הַגֶּשֶׁר לִבְנֵי אָדָם</p>
       </div>
       <div>
         <ThemeToggle />

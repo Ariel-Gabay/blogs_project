@@ -1,0 +1,38 @@
+@import "./shared.scss";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100svw;
+  z-index: 50;
+  background-color: var(--bg-transparent-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--shadow-color);
+  @include transition(background-color, box-shadow);
+}
+
+.logo {
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & p {
+    @include static-box(1, $size-xl);
+    margin: 0;
+  }
+}
+
+.image {
+  width: calc($size-xl * 1);
+  height: calc($size-xl * 1);
+  background: var(--head);
+  background-repeat: no-repeat;
+  background-size: calc($size-xl * 1);
+  background-position: center;
+  margin-left: 5px;
+}

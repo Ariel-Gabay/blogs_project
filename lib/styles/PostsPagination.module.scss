@@ -1,0 +1,174 @@
+@import "./shared.scss";
+
+$card-height: calc($size-md * 5);
+
+.pagination {
+  padding: 20px 5px;
+  background-image: url("/background-image.svg");
+  background-size: 35px;
+  display: grid;
+}
+
+.paginationCards {
+  min-height: 700px;
+  transition: min-height 1s linear;
+}
+
+.paginationCards.isLastPage {
+  min-height: 100px;
+}
+
+.paginationActions {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+$card-height: calc($size-md * 5);
+
+.pagination {
+  padding: 20px 5px;
+  background-image: url("/background-image.svg");
+  background-size: 35px;
+  display: grid;
+}
+
+.paginationCards {
+  min-height: 700px;
+  transition: min-height 1s linear;
+}
+
+.paginationCards.isLastPage {
+  min-height: 100px;
+}
+
+.paginationActions {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+$height-line: calc($size-md * 1.5);
+
+.card {
+  width: calc(1fr - 15px);
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  text-decoration: none;
+  color: inherit;
+  border-top: 1px solid var(--cadetblue);
+  border-bottom: 1px solid var(--cadetblue);
+  border-radius: $size-sm;
+  align-self: center;
+  background-color: var(--bg-color);
+  margin: $size-xs 0;
+  will-change: transform, box-shadow, background-color, border-radius;
+  transition: box-shadow 0.7s ease, transform 0.7s ease, border 0.7s ease,
+    border-radius 0.5s ease;
+
+  & > .iconsRow {
+    grid-column: 1 / 3;
+  }
+
+  &:hover {
+    border-radius: $size-xxs;
+    background-color: var(--cadetblue-transparent);
+    transform: translateY(-2px) scale(1.0005);
+    box-shadow: var(--shadow-color);
+  }
+
+  &:hover img {
+    border-radius: 0;
+  }
+
+  &:hover .iconsRow {
+    border-color: var(--cadetblue-transparent);
+  }
+}
+
+.heading {
+  $lines: 3;
+  @include static-box($lines, $height-line);
+  @include text-overflow-3-points($lines);
+  align-content: center;
+  text-align: start;
+  width: calc(100% - $size-xxs);
+  // margin: 0;
+  margin: 0 $size-xxs;
+  padding-bottom: $size-sm;
+}
+
+.title {
+  font-size: $size-lg;
+  font-weight: 800;
+  color: var(--red);
+}
+
+.subTitle {
+  font-size: $size-md;
+  font-weight: 200;
+  color: var(--text-color);
+}
+
+.image {
+  @include static-box(3, calc($height-line + calc($size-sm / 3)));
+  aspect-ratio: 1 / 1;
+  width: unset;
+  align-content: center;
+  text-align: center;
+  border-right: 1px solid var(--cadetblue);
+  border-radius: $size-sm 0 0 0;
+  transition: border-radius 0.5s ease;
+}
+
+.iconsRow {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: $size-lg;
+  background-color: var(--cadetblue-transparent);
+  border-radius: 0 0 $size-sm $size-sm;
+  border-top: 1px solid var(--cadetblue);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.iconTextGroup {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  gap: $size-xxs;
+}
+
+.icon {
+  @include static-box(1, $height-line);
+  aspect-ratio: 1 / 1;
+  color: var(--text-color);
+  font-size: $size-sm;
+  align-content: center;
+  text-align: center;
+}
+
+.iconText {
+  $lines: 1;
+  @include static-box($lines, $height-line);
+  @include text-overflow-3-points($lines);
+  width: 100%;
+  color: var(--text-color);
+  font-size: $size-sm;
+  margin: unset;
+  align-content: end;
+  text-align: start;
+}

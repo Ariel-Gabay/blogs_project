@@ -1,35 +1,46 @@
 import Image from "next/image";
+import styles from "@/lib/styles/Gate.module.scss";
+import { ArrowBigDown } from "lucide-react";
 
 const Gate = () => {
   return (
-    <header className="gate-height mt-[70px] relative w-full flex items-center justify-center shadow-[0_-8px_15px_-3px_rgba(0,0,0,0.3),0_8px_15px_-3px_rgba(0,0,0,0.3)] rounded-b-md">
-      <Image
-        src="/gate-image.png"
-        alt="תמונת שער"
-        height={800}
-        width={1000}
-        // placeholder="blur"
-        // blurDataURL={URLGateImage}
-        className="w-full h-full object-fill rounded-b-md"
-      />
-      <div className="absolute inset-0 bg-white/10 gate rounded-b-md">
-        <div>
-          <h1>הַגֶּשֶׁר לִבְנֵי אָדָם</h1>
-        </div>
+    <div className={styles.gate}>
+      <div className={styles.contentArea}>
+        <h1>הַגֶּשֶׁר לִבְנֵי אָדָם</h1>
         <div>
           <p>
             “הַגֶּשֶׁר לִבְנֵי אָדָם” הוא מקום שמפשט את עולם התקשורת והחשיבה
             האנושית ומגיש תובנות ברורות לחיי היום-יום.
-            <br />
+          </p>
+          <p>
             המאמרים נכתבים בידי ד"ר אליהו הדר, מומחה בעל ניסיון עשיר בהבנת
             תהליכי נפש ושפה.
-            <br />
+          </p>
+          <p>
             כאן מחכים לך כלים פרקטיים, רעיונות מעוררי מחשבה ותגליות שיגרמו לך
             לרצות להעמיק עוד.
           </p>
         </div>
+        <div className={styles.cards}>
+          <div className={styles.card}>
+            <ArrowBigDown />
+            <h2>מה חדש בבלוג?</h2>
+            <h3>
+              הישארו מעודכנים עם התוכן הטרי ביותר. המאמרים האחרונים מחכים לכם
+              כאן.
+            </h3>
+          </div>
+          <div className={styles.card}>
+            <ArrowBigDown />
+            <h2>מפת עולמות התוכן</h2>
+            <h3>
+              צללו לעומק התוכן שלנו. כאן תוכלו למצוא את המאמרים מרוכזים לפי
+              נושאים.
+            </h3>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
   );
 };
 

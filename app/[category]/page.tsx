@@ -1,6 +1,6 @@
-import { supabase } from "../../lib/supabase/clientServer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { posts as postsM, categories as categoriesM } from "@/lib/mock";
 
 interface Props {
   params: { category: string };
@@ -9,24 +9,26 @@ interface Props {
 const Category = async ({ params }: Props) => {
   const { category: slug } = await Promise.resolve(params);
 
-  const { data: dataCategory } = await supabase
-    .from("categories")
-    .select("*")
-    .eq("slug", decodeURIComponent(slug))
-    .single();
+  // const { data: category } = await supabase
+  //   .from("categories")
+  //   .select("*")
+  //   .eq("slug", decodeURIComponent(slug))
+  //   .single();
+  // const category = dataCategory as Category;
+  const [category] = categoriesM.filter(
+    (c) => c.slug === decodeURIComponent(slug)
+  );
 
-  if (!dataCategory) return notFound();
+  if (!category) return notFound();
 
-  const category = dataCategory as Category;
-
-  const { data: dataPosts } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("category_id", category.id)
-    .eq("published", true)
-    .order("created_at", { ascending: false });
-
-  const posts = dataPosts as PostPreview[];
+  // const { data: dataPosts } = await supabase
+  //   .from("posts")
+  //   .select("*")
+  //   .eq("category_id", category.id)
+  //   .eq("published", true)
+  //   .order("created_at", { ascending: false });
+  // const posts = dataPosts as PostPreview[];
+  const posts = postsM.filter((post) => post.category_id === category.id);
 
   return (
     <div className="p-6">
@@ -41,7 +43,7 @@ const Category = async ({ params }: Props) => {
         {(posts as PostPreview[])?.map((post) => (
           <Link
             key={post.id}
-            href={`/${category.slug}/${post.slug}`}
+            href={`/${post.slug}`}
             className="block border rounded-2xl p-6 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
             {post.cover_image && (
@@ -56,7 +58,7 @@ const Category = async ({ params }: Props) => {
               <p className="text-gray-600">{post.sub_title}</p>
             )}
             <p className="text-sm text-gray-400 mt-2">
-              {new Date(post.created_at).toLocaleDateString()} • {post.views}{" "}
+              {new Date(post.updated_at).toLocaleDateString()} • {post.views}{" "}
               צפיות • {post.likes} לייקים
             </p>
           </Link>

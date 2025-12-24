@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CircleSlash } from "lucide-react";
+import styles from "@/lib/styles/Categories.module.scss";
 
 interface Props {
   category: Category;
@@ -10,41 +11,33 @@ const CategoryCard = ({ category }: Props) => {
     <Link
       key={category.id}
       href={`/${category.slug}`}
-      className="border border-[0.5px] border-[var(--cadetblue)] rounded-[5px]"
+      className={styles.categoryCardLink}
     >
-      <div className="h-[200px] bg-[var(--dark)] rounded-[5px] grid grid-cols-[30px_1fr_30px] grid-rows-[30px_3fr_4fr_30px] category-hover">
-        <div className="category-card-div">
+      <div
+        className={`${styles.categoryCardContainer} ${styles.categoryHover}`}
+      >
+        <div className={styles.categoryCardDiv}>
           <CircleSlash size={5} />
         </div>
         <div />
-        <div className="category-card-div transform rotate-90">
+        <div className={`${styles.categoryCardDiv} ${styles.rotate90}`}>
           <CircleSlash size={5} />
         </div>
         <div />
-        <div className="category-card-div">
-          <h1
-            className="font-bold text-center"
-            style={{ fontSize: "var(--size-xl)", color: "var(--light)" }}
-          >
-            {category.name}
-          </h1>
+        <div className={styles.categoryCardDiv}>
+          <h1>{category.name}</h1>
         </div>
         <div />
         <div />
-        <div className="category-card-div">
-          <h2
-            className="text-center"
-            style={{ fontSize: "var(--size-md)", color: "var(--light)" }}
-          >
-            {category.description}
-          </h2>
+        <div className={styles.categoryCardDiv}>
+          <h2>{category.description}</h2>
         </div>
         <div />
-        <div className="category-card-div transform rotate-90">
+        <div className={`${styles.categoryCardDiv} ${styles.rotate90}`}>
           <CircleSlash size={5} />
         </div>
         <div />
-        <div className="category-card-div">
+        <div className={styles.categoryCardDiv}>
           <CircleSlash size={5} />
         </div>
       </div>
