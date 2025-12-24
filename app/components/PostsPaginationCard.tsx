@@ -13,7 +13,7 @@ const PostsPaginationCard = ({ post, categories }: Props) => {
   const categoryName = categories.find((c) => c.id === post.category_id)?.name;
 
   return (
-    <Link href={`${categoryName}/${post.slug}`} className={styles.card}>
+    <Link href={`${post.slug}`} className={styles.card}>
       <h2 className={styles.heading}>
         <span className={styles.title}>{post.title}</span>
         <br />

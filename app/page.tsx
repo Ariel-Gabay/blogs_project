@@ -13,7 +13,6 @@ const Home = async () => {
       <Gate />
       <Posts categories={categories} />
       <Categories categories={categories} />
-      <input type="file" />
       <PuzzleTile index="1" top right bottom left />
       <PuzzleTile
         index="2"

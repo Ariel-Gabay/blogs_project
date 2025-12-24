@@ -27,10 +27,26 @@
   }
 }
 
-.image {
+.imageLight {
+  display: var(--head-light);
   width: calc($size-xl * 1);
   height: calc($size-xl * 1);
-  background: var(--head);
+  background: url("/head-dark.svg");
+  background-repeat: no-repeat;
+  background-size: calc($size-xl * 1);
+  background-position: center;
+  margin-left: 5px;
+}
+
+// .imageLight.dark {
+//   display: none;
+// }
+
+.imageDark {
+  display: var(--head-dark);
+  width: calc($size-xl * 1);
+  height: calc($size-xl * 1);
+  background: url("/head-light.svg");
   background-repeat: no-repeat;
   background-size: calc($size-xl * 1);
   background-position: center;

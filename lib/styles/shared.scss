@@ -107,14 +107,16 @@ $size-xxxl: size(3rem, 4.5rem);
   --bg-transition: background-color 0.5s ease;
   --shadow-color: 0 0 12px
     color-mix(in srgb, var(--bg-color) 85%, var(--text-color));
-  --head: url("/head-light.svg");
+  --head-light: none;
+  --head-dark: unset;
 }
 
 html.dark {
   --bg-color: var(--dark);
   --bg-transparent-color: var(--dark-transparent);
   --text-color: var(--light);
-  --head: url("/head-dark.svg");
+  --head-light: unset;
+  --head-dark: none;
 }
 
 /////////////////////

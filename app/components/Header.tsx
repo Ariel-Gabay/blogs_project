@@ -6,7 +6,8 @@ const Header = () => {
   return (
     <nav className={styles.header}>
       <div className={styles.logo}>
-        <div className={styles.image} />
+        <div className={styles.imageLight} />
+        <div className={styles.imageDark} />
         <p>הַגֶּשֶׁר לִבְנֵי אָדָם</p>
       </div>
       <div>
