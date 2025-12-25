@@ -28,7 +28,7 @@
   & h1 {
     @include static-box(1, $size-xxxl);
     display: inline-block;
-    font-size: $size-xxxl;
+    font-size: $size-lg;
     font-weight: 700;
     transform: translateX(0.1em);
     text-align: center;
@@ -38,7 +38,7 @@
 
   & p {
     margin: 0 2svw;
-    font-size: $size-lg;
+    font-size: $size-md;
     text-align: center;
   }
 }
@@ -72,18 +72,18 @@
   }
 
   & h2 {
-    @include static-box(1, $size-xxl);
+    @include static-box(1, $size-lg);
     @include text-overflow-3-points(1);
-    font-size: $size-xxl;
+    font-size: $size-lg;
     margin: 0;
     font-weight: 600;
     color: var(--red);
   }
 
   & h3 {
-    @include static-box(3, $size-lg);
+    @include static-box(3, $size-md);
     @include text-overflow-3-points(3);
-    font-size: $size-lg;
+    font-size: $size-md;
     text-align: center;
     margin: 0;
     font-weight: 300;
