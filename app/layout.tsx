@@ -1,10 +1,24 @@
 import { ReactNode } from "react";
+import type { Metadata, Viewport } from "next";
 import Header from "./components/Header";
 import "@/lib/styles/shared.scss";
 
 interface Props {
   children: ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: "הַגֶּשֶׁר לִבְנֵי אָדָם",
+  description: "נוצר עם Next.js",
+  icons: {
+    icon: "/head-light.svg",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 const Home = async ({ children }: Props) => {
   return (
@@ -25,7 +39,6 @@ const Home = async ({ children }: Props) => {
             })();
           `}
         </Script> */}
-        <title>הַגֶּשֶׁר לִבְנֵי אָדָם</title>
       </head>
       <body>
         {/* <Providers> */}
